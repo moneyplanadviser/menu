@@ -1,282 +1,220 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8">
+  <title>Family Money Program｜松竹梅プラン一覧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+      background-color: #faf8f5;
+      color: #333;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    .page-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #171717;
+    }
+    .page-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 28px;
+    }
+    .intro {
+      font-size: 0.95rem;
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      margin-bottom: 24px;
+    }
+    .plans {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .plan-card {
+      background-color: #fff;
+      border-radius: 18px;
+      padding: 20px 20px 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border-top: 4px solid #f69400;
+    }
+    .plan-header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .plan-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #f69400;
+      letter-spacing: 0.07em;
+    }
+    .plan-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .plan-price {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 2px;
+      color: #c86d00;
+    }
+    .plan-catch {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .plan-section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 14px 0 6px;
+      color: #444;
+    }
+    .plan-list {
+      margin: 0;
+      padding-left: 1.1em;
+      font-size: 0.9rem;
+    }
+    .plan-list li { margin-bottom: 4px; }
+    .plan-footer-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .plan-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background-color: #f69400;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(246,148,0,0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+    }
+    .plan-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 12px rgba(246,148,0,0.45);
+      opacity: 0.95;
+    }
+    @media (min-width: 900px) {
+      .plans { flex-direction: row; align-items: stretch; }
+      .plan-card { flex: 1; }
+    }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ja"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Family Money Program｜松竹梅プラン一覧&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* ベース設定 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>* {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #faf8f5;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #333;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>line-height: 1.7;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>a {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: inherit;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-decoration: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* コンテナ */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.container {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 1040px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 24px 16px 40px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* ヘッダー */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.page-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.8rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #171717;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.page-subtitle {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #666;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* 説明文 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.intro {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: #fff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 16px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 18px 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 10px rgba(0,0,0,0.03);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 24px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* プラン一覧 */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plans {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>gap: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-card {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #fff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 20px 20px 22px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 12px rgba(0,0,0,0.04);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-top: 4px solid #f69400;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-header {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>flex-direction: column;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>gap: 4px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-label {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.85rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #f69400;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>letter-spacing: 0.07em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-name {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.2rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-price {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 1.05rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 600;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 2px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #c86d00;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-catch {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #666;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-section-title {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 14px 0 6px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #444;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-list {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding-left: 1.1em;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-list li {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-footer-note {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #888;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* ボタン */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: inline-block;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 14px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 18px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 999px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #f69400;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #fff;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 600;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 3px 8px rgba(246,148,0,0.35);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.plan-button:hover {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transform: translateY(-1px);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 5px 12px rgba(246,148,0,0.45);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>opacity: 0.95;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>/* レイアウト：PCで横並び */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media (min-width: 900px) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.plans {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>flex-direction: row;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align-items: stretch;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.plan-card {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>flex: 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1 class="page-title"&gt;Family Money Program（BE商品）&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="page-subtitle"&gt;ご家族のペースに合わせて選べる、3つのサポートプラン&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="intro"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>「家計を整えたいけれど、何から始めたらいいかわからない」&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>「家事・育児・仕事で忙しくて、じっくり見直す時間がない」&lt;br&gt;&lt;br&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>そんなご家族のために、サポートの量と関わり方のちがいで選べる</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;strong&gt;松（セルフスタート）・竹（ライトサポート）・梅（フルサポート）&lt;/strong&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>の3つのプランをご用意しました。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="plans"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- 松：セルフスタート --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="plan-card" id="plan-matsu"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="plan-header"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="plan-label"&gt;松&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 class="plan-name"&gt;セルフスタートプラン&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="plan-price"&gt;月額 3,000円（税込）&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-catch"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>まずは「知ること」から始めたい方向け。 <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>自分のペースで家計の整え方を学ぶプランです。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 class="plan-section-title"&gt;内容&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="plan-list"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;メール講座（家計の整え方の基礎を体系的に学べる）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-footer-note"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>※チャット相談・家計レポート・面談は含まれません。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▼▼▼ 支払いページのURLに変更してください ▼▼▼ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a class="plan-button" href="https://example.com/payment?plan=matsu"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>松（セルフスタート）で申し込む</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▲▲▲ ここをあなたのHP内の支払いページURLに変更 ▲▲▲ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- 竹：ライトサポート --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="plan-card" id="plan-take"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="plan-header"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="plan-label"&gt;竹&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 class="plan-name"&gt;ライトサポートプラン&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="plan-price"&gt;月額 10,000円（税込）&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-catch"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>面談の時間は取りづらいけれど、家計はしっかり整えたい方向け。 <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>チャットと家計診断レポートで、忙しくても進められるプランです。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 class="plan-section-title"&gt;内容&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="plan-list"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;メール講座（松と同じメニュー）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;公式LINEでメッセージ可能（24時間チャット対応）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;レシートを送ってもらい、項目ごとに振り分け&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;月末に家計診断レポートを作成&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;日々の支出の見える化（AI活用）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-footer-note"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>※オンライン面談・ライフプラン表の作成は含まれません。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▼▼▼ 支払いページのURLに変更してください ▼▼▼ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a class="plan-button" href="https://example.com/payment?plan=take"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>竹（ライトサポート）で申し込む</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▲▲▲ ここをあなたのHP内の支払いページURLに変更 ▲▲▲ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- 梅：フルサポート --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="plan-card" id="plan-ume"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;header class="plan-header"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="plan-label"&gt;梅&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 class="plan-name"&gt;フルサポートプラン&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="plan-price"&gt;月額 30,000円（税込）&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-catch"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>家計をトータルで見直し、伴走してほしい方向け。 <span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>チャット・家計診断・面談・ライフプラン作成まで含まれる、いちばん手厚いプランです。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 class="plan-section-title"&gt;内容&lt;/h3&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul class="plan-list"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;メール講座&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;公式LINEでメッセージ可能（24時間チャット対応）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;レシートを送ってもらい、項目ごとに振り分け&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;月末に家計診断レポートを作成&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;日々の支出の見える化（AI活用）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;上記「竹」と同じメニューをすべて含む&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;改善点の壁打ち、行動目標づくりのフォロー&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;月1回・60分のオンライン面談&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;li&gt;ライフプラン表の作成（3ヶ月に1回）&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="plan-footer-note"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>※ご夫婦での参加も歓迎です。面談日程は個別に調整します。</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▼▼▼ 支払いページのURLに変更してください ▼▼▼ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;a class="plan-button" href="https://example.com/payment?plan=ume"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>梅（フルサポート）で申し込む</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- ▲▲▲ ここをあなたのHP内の支払いページURLに変更 ▲▲▲ --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;&lt;!-- /.plans --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;&lt;!-- /.container --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+  <div class="container">
+    <h1 class="page-title">Family Money Program（BE商品）</h1>
+    <p class="page-subtitle">ご家族のペースに合わせて選べる、3つのサポートプラン</p>
+
+    <div class="intro">
+      <p>
+        「家計を整えたいけれど、何から始めたらいいかわからない」<br>
+        「家事・育児・仕事で忙しくて、じっくり見直す時間がない」<br><br>
+        そんなご家族のために、サポートの量と関わり方のちがいで選べる
+        <strong>松（セルフスタート）・竹（ライトサポート）・梅（フルサポート）</strong>
+        の3つのプランをご用意しました。
+      </p>
+    </div>
+
+    <div class="plans">
+      <!-- 松 -->
+      <section class="plan-card" id="plan-matsu">
+        <header class="plan-header">
+          <span class="plan-label">松</span>
+          <h2 class="plan-name">セルフスタートプラン</h2>
+          <p class="plan-price">月額 3,000円（税込）</p>
+        </header>
+        <p class="plan-catch">
+          まずは「知ること」から始めたい方向け。<br>
+          自分のペースで家計の整え方を学ぶプランです。
+        </p>
+        <h3 class="plan-section-title">内容</h3>
+        <ul class="plan-list">
+          <li>メール講座（家計の整え方の基礎を体系的に学べる）</li>
+        </ul>
+        <p class="plan-footer-note">※チャット相談・家計レポート・面談は含まれません。</p>
+        <a class="plan-button" href="https://example.com/payment?plan=matsu">
+          松（セルフスタート）で申し込む
+        </a>
+      </section>
+
+      <!-- 竹 -->
+      <section class="plan-card" id="plan-take">
+        <header class="plan-header">
+          <span class="plan-label">竹</span>
+          <h2 class="plan-name">ライトサポートプラン</h2>
+          <p class="plan-price">月額 10,000円（税込）</p>
+        </header>
+        <p class="plan-catch">
+          面談の時間は取りづらいけれど、家計はしっかり整えたい方向け。<br>
+          チャットと家計診断レポートで、忙しくても進められるプランです。
+        </p>
+        <h3 class="plan-section-title">内容</h3>
+        <ul class="plan-list">
+          <li>メール講座（松と同じメニュー）</li>
+          <li>公式LINEでメッセージ可能（24時間チャット対応）</li>
+          <li>レシートを送ってもらい、項目ごとに振り分け</li>
+          <li>月末に家計診断レポートを作成</li>
+          <li>日々の支出の見える化（AI活用）</li>
+        </ul>
+        <p class="plan-footer-note">※オンライン面談・ライフプラン表の作成は含まれません。</p>
+        <a class="plan-button" href="https://example.com/payment?plan=take">
+          竹（ライトサポート）で申し込む
+        </a>
+      </section>
+
+      <!-- 梅 -->
+      <section class="plan-card" id="plan-ume">
+        <header class="plan-header">
+          <span class="plan-label">梅</span>
+          <h2 class="plan-name">フルサポートプラン</h2>
+          <p class="plan-price">月額 30,000円（税込）</p>
+        </header>
+        <p class="plan-catch">
+          家計をトータルで見直し、伴走してほしい方向け。<br>
+          チャット・家計診断・面談・ライフプラン作成まで含まれる、いちばん手厚いプランです。
+        </p>
+        <h3 class="plan-section-title">内容</h3>
+        <ul class="plan-list">
+          <li>メール講座</li>
+          <li>公式LINEでメッセージ可能（24時間チャット対応）</li>
+          <li>レシートを送ってもらい、項目ごとに振り分け</li>
+          <li>月末に家計診断レポートを作成</li>
+          <li>日々の支出の見える化（AI活用）</li>
+          <li>上記「竹」と同じメニューをすべて含む</li>
+          <li>改善点の壁打ち、行動目標づくりのフォロー</li>
+          <li>月1回・60分のオンライン面談</li>
+          <li>ライフプラン表の作成（3ヶ月に1回）</li>
+        </ul>
+        <p class="plan-footer-note">
+          ※ご夫婦での参加も歓迎です。面談日程は個別に調整します。
+        </p>
+        <a class="plan-button" href="https://example.com/payment?plan=ume">
+          梅（フルサポート）で申し込む
+        </a>
+      </section>
+    </div>
+  </div>
 </body>
 </html>
