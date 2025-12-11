@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Family Money Program｜松竹梅プラン一覧</title>
+  <title>Family Money Program｜サポートプラン一覧</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box; }
@@ -59,12 +59,6 @@
       flex-direction: column;
       gap: 4px;
       margin-bottom: 12px;
-    }
-    .plan-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #f69400;
-      letter-spacing: 0.07em;
     }
     .plan-name {
       font-size: 1.2rem;
@@ -124,24 +118,23 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="page-title">Family Money Program（BE商品）</h1>
+    <h1 class="page-title">Family Money Program</h1>
     <p class="page-subtitle">ご家族のペースに合わせて選べる、3つのサポートプラン</p>
 
     <div class="intro">
       <p>
         「家計を整えたいけれど、何から始めたらいいかわからない」<br>
         「家事・育児・仕事で忙しくて、じっくり見直す時間がない」<br><br>
-        そんなご家族のために、サポートの量と関わり方のちがいで選べる
-        <strong>松（セルフスタート）・竹（ライトサポート）・梅（フルサポート）</strong>
+        そんなご家族のために、サポートの量と関わり方のちがいで選べる<br>
+        <strong>セルフスタート・ライトサポート・フルサポート</strong>
         の3つのプランをご用意しました。
       </p>
     </div>
 
     <div class="plans">
-      <!-- 松 -->
-      <section class="plan-card" id="plan-matsu">
+      <!-- セルフスタート -->
+      <section class="plan-card" id="plan-self">
         <header class="plan-header">
-          <span class="plan-label">松</span>
           <h2 class="plan-name">セルフスタートプラン</h2>
           <p class="plan-price">月額 3,000円（税込）</p>
         </header>
@@ -154,15 +147,14 @@
           <li>メール講座（家計の整え方の基礎を体系的に学べる）</li>
         </ul>
         <p class="plan-footer-note">※チャット相談・家計レポート・面談は含まれません。</p>
-        <a class="plan-button" href="https://example.com/payment?plan=matsu">
-          松（セルフスタート）で申し込む
+        <a class="plan-button" href="https://example.com/payment?plan=self">
+          セルフスタートプランで申し込む
         </a>
       </section>
 
-      <!-- 竹 -->
-      <section class="plan-card" id="plan-take">
+      <!-- ライトサポート -->
+      <section class="plan-card" id="plan-light">
         <header class="plan-header">
-          <span class="plan-label">竹</span>
           <h2 class="plan-name">ライトサポートプラン</h2>
           <p class="plan-price">月額 10,000円（税込）</p>
         </header>
@@ -172,22 +164,21 @@
         </p>
         <h3 class="plan-section-title">内容</h3>
         <ul class="plan-list">
-          <li>メール講座（松と同じメニュー）</li>
+          <li>メール講座（セルフスタートと同じメニュー）</li>
           <li>公式LINEでメッセージ可能（24時間チャット対応）</li>
           <li>レシートを送ってもらい、項目ごとに振り分け</li>
           <li>月末に家計診断レポートを作成</li>
           <li>日々の支出の見える化（AI活用）</li>
         </ul>
         <p class="plan-footer-note">※オンライン面談・ライフプラン表の作成は含まれません。</p>
-        <a class="plan-button" href="https://example.com/payment?plan=take">
-          竹（ライトサポート）で申し込む
+        <a class="plan-button" href="https://example.com/payment?plan=light">
+          ライトサポートプランで申し込む
         </a>
       </section>
 
-      <!-- 梅 -->
-      <section class="plan-card" id="plan-ume">
+      <!-- フルサポート -->
+      <section class="plan-card" id="plan-full">
         <header class="plan-header">
-          <span class="plan-label">梅</span>
           <h2 class="plan-name">フルサポートプラン</h2>
           <p class="plan-price">月額 30,000円（税込）</p>
         </header>
@@ -202,7 +193,7 @@
           <li>レシートを送ってもらい、項目ごとに振り分け</li>
           <li>月末に家計診断レポートを作成</li>
           <li>日々の支出の見える化（AI活用）</li>
-          <li>上記「竹」と同じメニューをすべて含む</li>
+          <li>上記「ライトサポート」と同じメニューをすべて含む</li>
           <li>改善点の壁打ち、行動目標づくりのフォロー</li>
           <li>月1回・60分のオンライン面談</li>
           <li>ライフプラン表の作成（3ヶ月に1回）</li>
@@ -210,8 +201,8 @@
         <p class="plan-footer-note">
           ※ご夫婦での参加も歓迎です。面談日程は個別に調整します。
         </p>
-        <a class="plan-button" href="https://example.com/payment?plan=ume">
-          梅（フルサポート）で申し込む
+        <a class="plan-button" href="https://example.com/payment?plan=full">
+          フルサポートプランで申し込む
         </a>
       </section>
     </div>
