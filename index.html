@@ -263,6 +263,55 @@
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <section class="chart-section">
+    <h2 class="chart-title">10年後に生まれる“ちがい”</h2>
+    <p class="chart-desc">
+      「仕組み化したご家庭」と「そのまま過ごしたご家庭」では、<br>
+      10年後にこれだけの差が生まれます。（イメージ）
+    </p>
+  
+    <div class="chart-box">
+      <canvas id="tenYearChart"></canvas>
+    </div>
+  </section>
+  
+  <script>
+    const ctx10 = document.getElementById('tenYearChart').getContext('2d');
+    new Chart(ctx10, {
+      type: 'bar',
+      data: {
+        labels: ['貯蓄額', '家計ストレス', '選択の自由度'],
+        datasets: [
+          {
+            label: '今のまま（仕組み化なし）',
+            data: [150, 80, 40],   // 数値はイメージ（万円・ストレス指数・自由度指数）
+            backgroundColor: 'rgba(200, 200, 200, 0.6)',
+          },
+          {
+            label: 'Family Money（仕組み化あり）',
+            data: [550, 30, 85],  // Beforeとの差をしっかり見せる
+            backgroundColor: 'rgba(246, 148, 0, 0.7)',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 50 }
+          }
+        },
+        plugins: {
+          legend: { labels: { font: { size: 12 } } },
+          tooltip: { enabled: true }
+        }
+      }
+    });
+  </script>
+
+  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // 3ヶ月後の変化イメージ（棒グラフ）
