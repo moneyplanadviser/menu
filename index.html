@@ -114,8 +114,101 @@
       .plans { flex-direction: row; align-items: stretch; }
       .plan-card { flex: 1; }
     }
+   .chart-section {
+      margin-top: 40px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 20px 20px 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    
+    .chart-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      color: #171717;
+      text-align: center;
+    }
+    
+    .chart-desc {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      margin: 0 0 16px;
+    }
+    
+    .chart-box {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    
+    .chart-box--half {
+      max-width: 380px;
+    }    
   </style>
 </head>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+<script>
+  // 3ヶ月後の変化イメージ（棒グラフ）
+  const ctxBar = document.getElementById('changeBarChart').getContext('2d');
+  new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ['貯蓄のペース', 'お金の不安', '家計の見える化'],
+      datasets: [
+        {
+          label: 'スタート前',
+          data: [2, 4, 1], // 1〜5のイメージスコア
+        },
+        {
+          label: '3ヶ月後のイメージ',
+          data: [4, 2, 4],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: { font: { size: 11 } }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMax: 5,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+
+  // 各プランのサポート量（円グラフ）
+  const ctxPie = document.getElementById('supportPieChart').getContext('2d');
+  new Chart(ctxPie, {
+    type: 'doughnut',
+    data: {
+      labels: ['セルフスタート', 'ライトサポート', 'フルサポート'],
+      datasets: [{
+        data: [1, 2, 3], // サポートのボリューム感
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { font: { size: 11 } }
+        }
+      },
+      cutout: '60%'
+    }
+  });
+</script>
 <body>
   <div class="container">
     <h1 class="page-title">Family Money Program</h1>
@@ -205,6 +298,30 @@
           フルサポートプランで申し込む
         </a>
       </section>
+            <!-- ▼ ここからグラフセクション ▼ -->
+      <section class="chart-section">
+        <h2 class="chart-title">3ヶ月後の変化イメージ</h2>
+        <p class="chart-desc">
+          実際の数値はご家庭によって変わりますが、サポートを通じて<br>
+          「貯蓄のペース」「お金の不安」「家計の見える化」がこのように変化していくイメージです。
+        </p>
+        <div class="chart-box">
+          <canvas id="changeBarChart"></canvas>
+        </div>
+      </section>
+      
+      <section class="chart-section">
+        <h2 class="chart-title">各プランのサポート量の違い</h2>
+        <p class="chart-desc">
+          サポートの「手厚さ」のイメージです。<br>
+          ご家族の状況や、今ほしいサポートの量に合わせてプランをお選びください。
+        </p>
+        <div class="chart-box chart-box--half">
+          <canvas id="supportPieChart"></canvas>
+        </div>
+      </section>
+<!-- ▲ ここまでグラフセクション ▲ -->
+
     </div>
   </div>
 </body>
